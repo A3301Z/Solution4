@@ -14,18 +14,14 @@ import java.util.UUID;
 public class Main {
     public static void main(String[] args) {
 
-        // Создание контекста
         GenericApplicationContext context = new StaticApplicationContext();
 
-        // Регистрация DataSource
         context.getBeanFactory().registerSingleton("dataSource", DataSourceConfig.createDataSource());
 
-        // Регистрация UserDao
         DataSource dataSource = context.getBean("dataSource", DataSource.class);
         UserDao userDao = new UserDao(dataSource);
         context.getBeanFactory().registerSingleton("userDao", userDao);
 
-        // Регистрация UserService
         UserService userService = new UserService(userDao);
         context.getBeanFactory().registerSingleton("userService", userService);
 
