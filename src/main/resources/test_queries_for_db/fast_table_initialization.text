@@ -1,0 +1,7 @@
+CREATE TABLE users (id BIGSERIAL PRIMARY KEY, username VARCHAR(255) UNIQUE NOT NULL);
+
+INSERT INTO users (id, username) VALUES
+('60180197-49e4-4acb-a638-a43c0ddf8fc4', 'ANTON'),
+('8130c253-b3b6-4e7a-90ec-cf460349cd77', 'KHALID KASHIMIRI'),
+('993f7faa-d217-407e-acee-72caf72fe94a', 'KHIDIR KARAWITA'),
+('3e7aac60-1680-4197-9f53-89362f6ac51a', 'Yaqub Kamaradin Jidiaz')
